@@ -1,0 +1,8 @@
+@stack stage Point {
+    let x: Int
+}
+
+func main() {
+    var point = Point(x: 10)
+    point.x = 20
+}

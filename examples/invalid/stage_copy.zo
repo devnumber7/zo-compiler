@@ -1,0 +1,8 @@
+@heap stage Counter {
+    var value: Int
+}
+
+func main() {
+    let original = Counter(value: 1)
+    let alias = original
+}

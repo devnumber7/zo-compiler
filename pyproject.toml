@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zo-stage-compiler"
+version = "0.1.0"
+description = "An experimental compiler for Zo stages and allocation directives"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+zo = "zo.cli:main"
+
+[tool.setuptools]
+packages = ["zo"]

@@ -1,0 +1,29 @@
+// Same field types, different storage policies.
+@stack
+stage Point {
+    let x: Int
+    let y: Int
+}
+
+@heap
+stage Counter {
+    var value: Int
+    var active: Bool
+}
+
+func main() {
+    let point = Point(x: 10, y: 20)
+    var counter = Counter(value: 0, active: true)
+
+    counter.value = point.x + point.y
+    print(counter.value)
+    print(counter.active)
+
+    {
+        let temporary = Counter(value: counter.value * 2, active: false)
+        print(temporary.value)
+    } // temporary's heap storage is released here.
+
+    counter.active = false
+    print(counter.active)
+} // counter's heap storage is released here.

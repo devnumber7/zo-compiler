@@ -1,0 +1,6 @@
+@stack @heap
+stage Impossible {
+    let value: Int
+}
+
+func main() {}
